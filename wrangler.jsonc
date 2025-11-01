@@ -1,0 +1,37 @@
+{
+  "name": "cf_ai_rag_chatbot",
+  "main": "src/server.ts",
+  "compatibility_date": "2024-10-01",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "AGENT",
+        "class_name": "Chat"
+      }
+    ]
+  },
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "doc-index",
+      "remote": true
+    }
+  ],
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": [
+        "Chat"
+      ]
+    }
+  ],
+  "vars": {
+    "AI_DEBUG": true
+  }
+}
